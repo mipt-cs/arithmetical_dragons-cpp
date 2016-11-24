@@ -6,7 +6,7 @@ void foo(int i) {
     b = b*i;
 }
 
-
+afk
 int main() {
     int a;
     a = 5;
