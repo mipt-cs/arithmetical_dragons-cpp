@@ -5,6 +5,7 @@
 
 class Enemy : public Unit {
 protected:
+    int time_;
     int answer_;
     int killPoints_;
 

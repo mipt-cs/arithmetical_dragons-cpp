@@ -1,0 +1,12 @@
+#ifndef ARITHMETICAL_DRAGONS_GAME_H
+#define ARITHMETICAL_DRAGONS_GAME_H
+
+
+class Game {
+
+
+
+};
+
+
+#endif //ARITHMETICAL_DRAGONS_GAME_H
