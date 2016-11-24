@@ -3,16 +3,16 @@
 #include <cstdlib>
 #include <list>
 
-#include "unit.h"
-#include "hero.h"
-#include "enemy.h"
+#include "Unit.h"
+#include "Hero.h"
+#include "Enemy.h"
 
 
 
 
 void showHealth(const Hero &hero, const Enemy &dragon) {
-    std::cout << "Hero health: " << hero.getHealth()
-         << ", Enemy health: " << dragon.getHealth() << std::endl;
+    std::cout << "Hero health_: " << hero.getHealth()
+         << ", Enemy health_: " << dragon.getHealth() << std::endl;
 }
 
 std::list<Enemy *> generateDragonList() {
