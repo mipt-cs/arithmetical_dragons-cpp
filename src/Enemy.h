@@ -3,23 +3,28 @@
 
 #include "Unit.h"
 
+
 class Enemy : public Unit {
 protected:
-    int time_;
-    int answer_;
+    int attackTime_;
     int killPoints_;
+    int answer_;
+    string question_;
+
 
 public:
-    Enemy(int health,
+    Enemy(string name,
+          int health,
           int attackForce,
-          std::string name,
+          int attackTime,
           int killPoints);
 
     int getKillPoints() const;
 
     bool checkAnswer(int answer) const;
 
-    virtual std::string generateQuestion() = 0;
+    virtual string generateQuestion() = 0;
 };
+
 
 #endif // DRAGON_H_INCLUDED

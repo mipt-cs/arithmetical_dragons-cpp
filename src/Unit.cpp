@@ -1,10 +1,10 @@
 #include "Unit.h"
 
 
-Unit::Unit(int health, int attackForce, std::string name)
-        : health_(health),
-          attackForce_(attackForce),
-          name_(name) {}
+Unit::Unit(string name, int health, int attackForce)
+        : name_(name),
+          health_(health),
+          attackForce_(attackForce) {}
 
 
 int Unit::getHealth() const {
@@ -27,7 +27,7 @@ void Unit::setHealth(int health) {
 }
 
 
-void Unit::attack(Unit* target) const {
+void Unit::attack(Unit *target) const {
     target->health_ -= attackForce_;
 }
 
@@ -35,8 +35,3 @@ void Unit::attack(Unit* target) const {
 bool Unit::isAlive() const {
     return (health_ > 0);
 }
-
-
-//void Unit::takeDamage(int damage) {
-//    health_ -= damage;
-//}

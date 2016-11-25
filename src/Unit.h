@@ -3,19 +3,20 @@
 
 #include <string>
 
-using namespace std;
+using std::string;
+
 
 class Unit {
 protected:
+    string name_;
     int health_;
     int attackForce_;
-    std::string name_;
 
 
 public:
-    Unit(int health,
-         int attackForce,
-         std::string name);
+    Unit(string name,
+         int health,
+         int attackForce);
 
     int getHealth() const;
 
@@ -23,11 +24,12 @@ public:
 
     string getName() const;
 
-    void attack(Unit* target) const;
+    void attack(Unit *target) const;
 
     void setHealth(int health);
 
     bool isAlive() const;
 };
+
 
 #endif // UNIT_H_INCLUDED

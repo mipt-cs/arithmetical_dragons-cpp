@@ -7,7 +7,7 @@ static int Hero::default_levelCapacity = 100;
 
 
 Hero::Hero(int health, int attackForce, std::string name)
-        : Unit(health, attackForce, name),
+        : Unit(name, health, attackForce),
           score_(0),
           level_(1) {}
 

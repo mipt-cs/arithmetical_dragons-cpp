@@ -5,34 +5,53 @@
 
 class AdditionDragon : public Enemy {
 public:
-    AdditionDragon(int health,
-                   int attackForce,
-                   std::string name,
-                   int killPoints);
+    static const string default_name;
+    static const int default_health;
+    static const int default_attackForce;
+    static const int default_attackTime;
+    static const int default_killPoints;
+
+    AdditionDragon(string name = default_name,
+                   int health = default_health,
+                   int attackForce = default_attackForce,
+                   int killPoints = default_killPoints,
+                   int attackTime = default_attackTime);
 
     std::string generateQuestion();
 };
-
 
 class SubtractionDragon : public Enemy {
 public:
-    SubtractionDragon(int health,
-                      int attackForce,
-                      std::string name,
-                      int killPoints);
+    static const string default_name;
+    static const int default_health;
+    static const int default_attackForce;
+    static const int default_attackTime;
+    static const int default_killPoints;
+
+    SubtractionDragon(string name = default_name,
+                      int health = default_health,
+                      int attackForce = default_attackForce,
+                      int killPoints = default_killPoints,
+                      int attackTime = default_attackTime);
 
     std::string generateQuestion();
 };
-
 
 class MultiplicationDragon : public Enemy {
 public:
-    MultiplicationDragon(int health,
-                         int attackForce,
-                         std::string name,
-                         int killPoints);
+    static const string default_name;
+    static const int default_health;
+    static const int default_attackForce;
+    static const int default_attackTime;
+    static const int default_killPoints;
+
+    MultiplicationDragon(string name = default_name,
+                         int health = default_health,
+                         int attackForce = default_attackForce,
+                         int killPoints = default_killPoints,
+                         int attackTime = default_attackTime);
 
     std::string generateQuestion();
 };
 
-#endif //ARITHMETICAL_DRAGONS_DRAGONS_H
+#endif
