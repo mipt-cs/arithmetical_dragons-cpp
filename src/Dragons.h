@@ -11,11 +11,7 @@ public:
     static const int default_attackTime;
     static const int default_killPoints;
 
-    AdditionDragon(string name = default_name,
-                   int health = default_health,
-                   int attackForce = default_attackForce,
-                   int killPoints = default_killPoints,
-                   int attackTime = default_attackTime);
+    AdditionDragon();
 
     std::string generateQuestion();
 };
@@ -28,11 +24,7 @@ public:
     static const int default_attackTime;
     static const int default_killPoints;
 
-    SubtractionDragon(string name = default_name,
-                      int health = default_health,
-                      int attackForce = default_attackForce,
-                      int killPoints = default_killPoints,
-                      int attackTime = default_attackTime);
+    SubtractionDragon();
 
     std::string generateQuestion();
 };
@@ -45,11 +37,7 @@ public:
     static const int default_attackTime;
     static const int default_killPoints;
 
-    MultiplicationDragon(string name = default_name,
-                         int health = default_health,
-                         int attackForce = default_attackForce,
-                         int killPoints = default_killPoints,
-                         int attackTime = default_attackTime);
+    MultiplicationDragon();
 
     std::string generateQuestion();
 };
