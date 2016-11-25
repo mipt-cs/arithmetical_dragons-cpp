@@ -5,31 +5,22 @@
 
 using std::string;
 
-
 class Unit {
 protected:
     string name_;
     int health_;
     int attackForce_;
 
-
 public:
     Unit(string name,
          int health,
          int attackForce);
 
-    int getHealth() const;
-
-    int getAttackForce() const;
-
-    string getName() const;
+    virtual void refresh() = 0;
 
     void attack(Unit *target) const;
-
-    void setHealth(int health);
 
     bool isAlive() const;
 };
 
-
-#endif // UNIT_H_INCLUDED
+#endif
