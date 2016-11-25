@@ -3,11 +3,11 @@
 
 /***********AdditionDragon*****************************************************/
 
-static const string  AdditionDragon::default_name = "AdditionDragon";
-static const int     AdditionDragon::default_health = 100;
-static const int     AdditionDragon::default_attackForce = 10;
-static const int     AdditionDragon::default_attackTime = 100;
-static const int     AdditionDragon::default_killPoints = 10;
+static string   AdditionDragon::default_name = "AdditionDragon";
+static int      AdditionDragon::default_health = 100;
+static int      AdditionDragon::default_attackForce = 10;
+static int      AdditionDragon::default_attackTime = 100;
+static int      AdditionDragon::default_killPoints = 10;
 
 AdditionDragon::AdditionDragon()
         : Enemy(AdditionDragon::default_name,
@@ -23,11 +23,11 @@ std::string AdditionDragon::generateQuestion() {
 
 /***********SubtractionDragon**************************************************/
 
-static const string  SubtractionDragon::default_name = "SubtractionDragon";
-static const int     SubtractionDragon::default_health = 100;
-static const int     SubtractionDragon::default_attackForce = 10;
-static const int     SubtractionDragon::default_attackTime = 100;
-static const int     SubtractionDragon::default_killPoints = 10;
+static string   SubtractionDragon::default_name = "SubtractionDragon";
+static int      SubtractionDragon::default_health = 100;
+static int      SubtractionDragon::default_attackForce = 10;
+static int      SubtractionDragon::default_attackTime = 100;
+static int      SubtractionDragon::default_killPoints = 10;
 
 SubtractionDragon::SubtractionDragon()
         : Enemy(SubtractionDragon::default_name,
@@ -43,11 +43,11 @@ std::string SubtractionDragon::generateQuestion() {
 
 /***********MultiplicationDragon***********************************************/
 
-static const string  MultiplicationDragon::default_name = "MultiplicationDragon";
-static const int     MultiplicationDragon::default_health = 100;
-static const int     MultiplicationDragon::default_attackForce = 10;
-static const int     MultiplicationDragon::default_attackTime = 150;
-static const int     MultiplicationDragon::default_killPoints = 20;
+static string   MultiplicationDragon::default_name = "MultiplicationDragon";
+static int      MultiplicationDragon::default_health = 100;
+static int      MultiplicationDragon::default_attackForce = 10;
+static int      MultiplicationDragon::default_attackTime = 150;
+static int      MultiplicationDragon::default_killPoints = 20;
 
 MultiplicationDragon::MultiplicationDragon()
         : Enemy(MultiplicationDragon::default_name,

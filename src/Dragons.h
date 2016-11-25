@@ -5,11 +5,11 @@
 
 class AdditionDragon : public Enemy {
 public:
-    static const string default_name;
-    static const int default_health;
-    static const int default_attackForce;
-    static const int default_attackTime;
-    static const int default_killPoints;
+    static string default_name;
+    static int default_health;
+    static int default_attackForce;
+    static int default_attackTime;
+    static int default_killPoints;
 
     AdditionDragon();
 
@@ -18,11 +18,11 @@ public:
 
 class SubtractionDragon : public Enemy {
 public:
-    static const string default_name;
-    static const int default_health;
-    static const int default_attackForce;
-    static const int default_attackTime;
-    static const int default_killPoints;
+    static string default_name;
+    static int default_health;
+    static int default_attackForce;
+    static int default_attackTime;
+    static int default_killPoints;
 
     SubtractionDragon();
 
@@ -31,11 +31,11 @@ public:
 
 class MultiplicationDragon : public Enemy {
 public:
-    static const string default_name;
-    static const int default_health;
-    static const int default_attackForce;
-    static const int default_attackTime;
-    static const int default_killPoints;
+    static string default_name;
+    static int default_health;
+    static int default_attackForce;
+    static int default_attackTime;
+    static int default_killPoints;
 
     MultiplicationDragon();
 
