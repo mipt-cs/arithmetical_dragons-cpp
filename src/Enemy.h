@@ -8,25 +8,20 @@ class Enemy : public Unit {
 protected:
     int attackTime_;
     int killPoints_;
-    int answer_;
-    string question_;
 
 
 public:
-
     Enemy(string name,
           int health,
           int attackForce,
           int attackTime,
           int killPoints);
 
-    void refresh();
-
     int getKillPoints() const;
 
-    bool checkAnswer(int answer) const;
+    virtual void refresh() = 0;
 
-    virtual string generateQuestion() = 0;
+    virtual bool checkAnswer(int answer) = 0;
 };
 
 

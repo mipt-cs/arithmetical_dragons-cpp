@@ -7,9 +7,6 @@ Unit::Unit(string name, int health, int attackForce)
           attackForce_(attackForce) {}
 
 
-
-
-
 void Unit::attack(Unit *target) const {
     target->health_ -= attackForce_;
 }

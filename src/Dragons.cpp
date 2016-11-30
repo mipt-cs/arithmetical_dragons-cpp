@@ -3,25 +3,42 @@
 
 /***********AdditionDragon*****************************************************/
 
-static string   AdditionDragon::default_name = "AdditionDragon";
-static int      AdditionDragon::default_health = 100;
-static int      AdditionDragon::default_attackForce = 10;
-static int      AdditionDragon::default_attackTime = 100;
-static int      AdditionDragon::default_killPoints = 10;
+string   Unit::default_name = "AdditionDragon";
+int      Unit::default_health = 100;
+int      Unit::default_attackForce = 10;
+int      Enemy::default_attackTime = 100;
+int      Enemy::default_killPoints = 10;
 
-AdditionDragon::AdditionDragon()
-        : Enemy(AdditionDragon::default_name,
-                AdditionDragon::default_health,
-                AdditionDragon::default_attackForce,
-                AdditionDragon::default_attackTime,
-                AdditionDragon::default_killPoints) {}
-
-string AdditionDragon::generateQuestion() {
-    return std::__cxx11::string();
+AdditionDragon::AdditionDragon() : Enemy(AdditionDragon::default_name,
+                                         AdditionDragon::default_health,
+                                         AdditionDragon::default_attackForce,
+                                         AdditionDragon::default_attackTime,
+                                         AdditionDragon::default_killPoints)
+{
+    generateQuestion();
 }
 
 
-/***********SubtractionDragon**************************************************/
+bool AdditionDragon::checkAnswer(int answer)
+{
+    return answer == answer_;
+}
+
+
+void AdditionDragon::refresh()
+{
+    generateQuestion();
+    name_ = default_name;
+    health_ = default_health;
+    attackForce_ = default_attackForce;
+    attackTime_ = default_attackTime;
+    killPoints_ = default_killPoints;
+}
+
+
+
+/***********SubtractionDragon**************************************************//*
+
 
 static string   SubtractionDragon::default_name = "SubtractionDragon";
 static int      SubtractionDragon::default_health = 100;
@@ -36,12 +53,12 @@ SubtractionDragon::SubtractionDragon()
                 SubtractionDragon::default_attackTime,
                 SubtractionDragon::default_killPoints) {}
 
-string SubtractionDragon::generateQuestion() {
-    return std::__cxx11::string();
-}
 
 
-/***********MultiplicationDragon***********************************************/
+
+*/
+/***********MultiplicationDragon***********************************************//*
+
 
 static string   MultiplicationDragon::default_name = "MultiplicationDragon";
 static int      MultiplicationDragon::default_health = 100;
@@ -56,6 +73,4 @@ MultiplicationDragon::MultiplicationDragon()
                 MultiplicationDragon::default_attackTime,
                 MultiplicationDragon::default_killPoints) {}
 
-string MultiplicationDragon::generateQuestion() {
-    return std::__cxx11::string();
-}
+*/

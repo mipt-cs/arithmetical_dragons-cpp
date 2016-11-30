@@ -5,11 +5,13 @@
 
 using std::string;
 
+
 class Unit {
 protected:
     string name_;
     int health_;
     int attackForce_;
+
 
 public:
     Unit(string name,
@@ -23,5 +25,6 @@ public:
 
     bool isAlive() const;
 };
+
 
 #endif

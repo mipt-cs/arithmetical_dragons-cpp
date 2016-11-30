@@ -12,6 +12,7 @@ private:
     static int default_levelCapacity;
 
 public:
+
     Hero(int health = default_health,
          int attackForce = default_attackForce,
          std::string name = "Player");
