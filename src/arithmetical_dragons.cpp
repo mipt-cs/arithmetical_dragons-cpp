@@ -3,9 +3,9 @@
 #include <cstdlib>
 #include <list>
 
-#include "unit.h"
-#include "hero.h"
-#include "dragon.h"
+#include "Unit.h"
+#include "Hero.h"
+#include "Dragon.h"
 
 using namespace std;
 
@@ -13,12 +13,12 @@ using namespace std;
 void showHealth(const Hero &hero, const Dragon &dragon)
 {
     cout << "Hero health: " << hero.getHealth()
-        << ", Dragon health: " << dragon.getHealth() << endl;
+         << ", Dragon health: " << dragon.getHealth() << endl;
 }
 
 list<Dragon*> generateDragonList()
 {
-    list<Dragon*> competitors;
+    std::list<Dragon*> competitors;
     competitors.push_back(new GreenDragon());
     competitors.push_back(new RedDragon());
     competitors.push_back(new BlackDragon());
@@ -32,12 +32,13 @@ bool playGame(Hero &hero, list<Dragon*> &dragons)
     bool gameOver = false;
 
     for (list<Dragon*>::iterator dragon = dragons.begin();
-            dragon != dragons.end(); dragon++)
+         dragon != dragons.end(); dragon++)
     {
         cout << "You have met a new " << (*dragon)->color() << " dragon. Fight!" << endl;
 
         while ((*dragon)->isAlive() && hero.isAlive())
         {
+            showHealth(hero, **dragon);
             hero.attack(**dragon);
         }
         if (!hero.isAlive())
@@ -58,7 +59,7 @@ bool playGame(Hero &hero, list<Dragon*> &dragons)
 int main()
 {
     Hero hero;
-    list<Dragon*> dragons = generateDragonList();
+    std::list<Dragon*> dragons = generateDragonList();
     bool gameResult = playGame(hero, dragons);
 
     if (gameResult)
@@ -70,7 +71,7 @@ int main()
         cout << "You win! Your score is: " << hero.getScores() << endl;
     }
     for (list<Dragon*>::iterator dragon = dragons.begin();
-            dragon != dragons.end(); dragon++)
+         dragon != dragons.end(); dragon++)
         delete *dragon;
     return 0;
 }

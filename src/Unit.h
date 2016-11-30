@@ -9,7 +9,7 @@ public:
     int attackForce;
 
     Unit(int start_health, int _attackForce)
-        :health(start_health), attackForce(_attackForce)
+            :health(start_health), attackForce(_attackForce)
     {}
     void getDamage(int damage)
     {
