@@ -1,34 +1,28 @@
 #ifndef UNIT_H_INCLUDED
 #define UNIT_H_INCLUDED
 
-#include <string>
-
-using std::string;
-
-
-class Unit {
+class Unit
+{
 protected:
-    string name_;
-    int health_;
-    int attackForce_;
-
-
+    int health;
 public:
-    Unit(string name,
-         int health,
-         int attackForce);
+    int attackForce;
 
-    const string &getName() const;
-
-    int getHealth() const;
-
-//    virtual void refresh() = 0;
-
-    //По типу атакующего и его цели высчитывается значение и выполняется урон.
-    void attack(Unit *target) const;
-
-    bool isAlive() const;
+    Unit(int start_health, int _attackForce)
+            :health(start_health), attackForce(_attackForce)
+    {}
+    void getDamage(int damage)
+    {
+        health -= damage;
+    }
+    int getHealth() const
+    {
+        return health;
+    }
+    bool isAlive() const
+    {
+        return (health > 0);
+    }
 };
 
-
-#endif
+#endif // UNIT_H_INCLUDED
