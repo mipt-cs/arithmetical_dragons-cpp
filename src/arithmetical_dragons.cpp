@@ -4,6 +4,7 @@
 #include <list>
 #include <time.h>
 #include <zconf.h>
+#include <rpc.h>
 
 
 #include "Unit.h"
@@ -54,9 +55,8 @@ bool playGame(Hero &hero, list<Enemy *> &enemies) {
             } else {
                 (*enemy)->attack(&hero);
             }
-            (*enemy)->setAttackTime((*enemy)->getAttackTime() - 1);
-            sleep(1);
-            system("cls");
+            //(*enemy)->setAttackTime((*enemy)->getAttackTime() - 1);
+            (*enemy)->refresh();
         }
 
 
