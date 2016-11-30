@@ -1,7 +1,7 @@
 #ifndef DRAGON_H_INCLUDED
 #define DRAGON_H_INCLUDED
 
-#include "Unit.h"
+#include "../Unit.h"
 
 
 class Enemy : public Unit {

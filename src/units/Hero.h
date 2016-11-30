@@ -1,7 +1,7 @@
 #ifndef HERO_H_INCLUDED
 #define HERO_H_INCLUDED
 
-#include "Unit.h"
+#include "../Unit.h"
 
 class Hero : public Unit {
 private:

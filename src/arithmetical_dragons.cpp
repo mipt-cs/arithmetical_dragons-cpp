@@ -4,15 +4,15 @@
 #include <list>
 
 #include "Unit.h"
-#include "Hero.h"
-#include "Enemy.h"
+#include "Units/Hero.h"
+#include "Units/Enemy.h"
 
 
 
 
 void showHealth(const Hero &hero, const Enemy &dragon) {
     std::cout << "Hero health_: " << hero.getHealth()
-         << ", Enemy health_: " << dragon.getHealth() << std::endl;
+         << ", enemies health_: " << dragon.getHealth() << std::endl;
 }
 
 std::list<Enemy *> generateDragonList() {
