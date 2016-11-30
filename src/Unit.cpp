@@ -15,3 +15,13 @@ void Unit::attack(Unit *target) const {
 bool Unit::isAlive() const {
     return (health_ > 0);
 }
+
+
+const string &Unit::getName() const {
+    return name_;
+}
+
+
+int Unit::getHealth() const {
+    return health_;
+}

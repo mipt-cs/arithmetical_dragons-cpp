@@ -1,9 +1,5 @@
 #include "Hero.h"
 
-static int Hero::default_health = 100;
-static int Hero::default_attackForce = 20;
-static int Hero::default_levelCapacity = 100;
-
 
 
 Hero::Hero(int health, int attackForce, std::string name)
@@ -28,8 +24,8 @@ void Hero::updateScore(int nPoints) {
 }
 
 
-void Hero::updateLevel() {
-    if (score_ >= default_levelCapacity * level_) {
-        level_++;
-    }
-}
+//void Hero::updateLevel() {
+//    if (score_ >= default_levelCapacity * level_) {
+//        level_++;
+//    }
+//}

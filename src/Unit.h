@@ -18,7 +18,11 @@ public:
          int health,
          int attackForce);
 
-    virtual void refresh() = 0;
+    const string &getName() const;
+
+    int getHealth() const;
+
+//    virtual void refresh() = 0;
 
     //По типу атакующего и его цели высчитывается значение и выполняется урон.
     void attack(Unit *target) const;

@@ -13,3 +13,12 @@ Enemy::Enemy(string name,
 int Enemy::getKillPoints() const {
     return killPoints_;
 }
+
+
+int Enemy::getAttackTime() const {
+    return attackTime_;
+}
+
+void Enemy::setAttackTime(int attackTime) {
+    Enemy::attackTime_ = attackTime;
+}

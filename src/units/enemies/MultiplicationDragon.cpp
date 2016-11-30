@@ -30,3 +30,7 @@ MultiplicationDragon::MultiplicationDragon() : Enemy(MultiplicationDragon::defau
                                                MultiplicationDragon::default_killPoints) {
     generateQuestion();
 }
+
+string MultiplicationDragon::getQuestion() {
+    return question_;
+}

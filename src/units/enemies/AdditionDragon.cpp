@@ -30,3 +30,7 @@ AdditionDragon::AdditionDragon() : Enemy(AdditionDragon::default_name,
                                          AdditionDragon::default_killPoints) {
     generateQuestion();
 }
+
+string AdditionDragon::getQuestion() {
+    return question_;
+}

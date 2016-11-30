@@ -30,3 +30,7 @@ SubtractionDragon::SubtractionDragon() : Enemy(SubtractionDragon::default_name,
                                          SubtractionDragon::default_killPoints) {
     generateQuestion();
 }
+
+string SubtractionDragon::getQuestion() {
+    return question_;
+}

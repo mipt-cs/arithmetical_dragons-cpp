@@ -19,9 +19,16 @@ public:
 
     int getKillPoints() const;
 
+    virtual string getQuestion() = 0;
+
     virtual void refresh() = 0;
 
     virtual bool checkAnswer(int answer) = 0;
+
+    int getAttackTime() const;
+
+    void setAttackTime(int attackTime);
+
 };
 
 

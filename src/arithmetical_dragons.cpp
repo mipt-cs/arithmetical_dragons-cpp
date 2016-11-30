@@ -2,44 +2,69 @@
 #include <sstream>
 #include <cstdlib>
 #include <list>
+#include <time.h>
+#include <zconf.h>
+
 
 #include "Unit.h"
 #include "Units/Hero.h"
 #include "Units/Enemy.h"
+#include "units/enemies/AdditionDragon.h"
+#include "units/enemies/SubtractionDragon.h"
+#include "units/enemies/MultiplicationDragon.h"
+
+using std::list;
 
 
-
-
-void showHealth(const Hero &hero, const Enemy &dragon) {
-    std::cout << "Hero health_: " << hero.getHealth()
-         << ", enemies health_: " << dragon.getHealth() << std::endl;
+list<Enemy *> generateEnemiesList() {
+    list<Enemy *> enemies;
+    enemies.push_back(new AdditionDragon());
+    enemies.push_back(new SubtractionDragon());
+    enemies.push_back(new MultiplicationDragon());
+    return enemies;
 }
 
-std::list<Enemy *> generateDragonList() {
-    std::list<Enemy *> competitors;
-    competitors.push_back(new GreenDragon());
 
-
-    return competitors;
+void showScreen(Hero &hero, Enemy &enemy) {
+    std::cout << "You have met a new " << enemy.getName()
+              << " dragon. Fight!" << "\n"
+              << "Your score: "
+              << hero.getScore() << "\n\n\n"
+              << "Your health: " << hero.getHealth() << ".             "
+              << "Enemy health: " << enemy.getHealth() << ".\n\n\n\n"
+              << "Question: " << enemy.getQuestion() << "\n\n";
+              //<< "Time: " << enemy.getAttackTime() << "\n\n.";
 }
 
 
-bool playGame(Hero &hero, std::list<Enemy *> &dragons) {
+bool playGame(Hero &hero, list<Enemy *> &enemies) {
     bool gameOver = false;
 
-    for (std::list<Enemy *>::iterator dragon = dragons.begin();
-         dragon != dragons.end(); dragon++) {
-        std::cout << "You have met a new " << (*dragon)->color() << " dragon. Fight!" << std::endl;
+    for (list<Enemy *>::iterator enemy = enemies.begin();
+         enemy != enemies.end();
+         enemy++) {
 
-        while ((*dragon)->isAlive() && hero.isAlive()) {
-            hero.attack(**dragon);
+
+        while ((*enemy)->isAlive() && hero.isAlive()) {
+            showScreen(hero, **enemy);
+            int answer;
+            std::cin >> answer;
+            if ((*enemy)->checkAnswer(answer)) {
+                hero.attack(*enemy);
+            } else {
+                (*enemy)->attack(&hero);
+            }
+            (*enemy)->setAttackTime((*enemy)->getAttackTime() - 1);
+            sleep(1);
+            system("cls");
         }
+
+
         if (!hero.isAlive()) {
             gameOver = true;
             break;
-        } else // dragon was killed!
-        {
-            hero.addScores(Enemy::c_killScores);
+        } else {
+            hero.updateScore((*enemy)->getKillPoints());
             std::cout << "Ough! You have killed a dragon!" << std::endl;
         }
     }
@@ -49,22 +74,20 @@ bool playGame(Hero &hero, std::list<Enemy *> &dragons) {
 }
 
 
-int main()
-{
+int main() {
     Hero hero;
-    std::list<Enemy*> dragons = generateDragonList();
+    std::list<Enemy *> dragons = generateEnemiesList();
     bool gameResult = playGame(hero, dragons);
 
-    if (gameResult)
-    {
-        cout << "Game over! Your score is: " << hero.getScores() << endl;
+    if (gameResult) {
+        std::cout << "Game over! Your score is: "
+                  << hero.getScore() << std::endl;
+    } else {
+        std::cout << "You win! Your score is: "
+                  << hero.getScore() << std::endl;
     }
-    else
-    {
-        cout << "You win! Your score is: " << hero.getScores() << endl;
-    }
-    for (list<Enemy*>::iterator dragon = dragons.begin();
-            dragon != dragons.end(); dragon++)
+    for (list<Enemy *>::iterator dragon = dragons.begin();
+         dragon != dragons.end(); dragon++)
         delete *dragon;
     return 0;
 }

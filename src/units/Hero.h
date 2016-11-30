@@ -7,14 +7,11 @@ class Hero : public Unit {
 private:
     int score_;
     int level_;
-    static int default_health;
-    static int default_attackForce;
-    static int default_levelCapacity;
 
 public:
 
-    Hero(int health = default_health,
-         int attackForce = default_attackForce,
+    Hero(int health = 100,
+         int attackForce = 20,
          std::string name = "Player");
 
     int getScore() const;

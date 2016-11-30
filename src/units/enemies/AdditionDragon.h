@@ -18,6 +18,8 @@ public:
     void refresh();
 
     bool checkAnswer(int answer);
+
+    string getQuestion();
 };
 
 
