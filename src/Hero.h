@@ -17,20 +17,20 @@ public:
     Hero(int health = default_health, int aForce = default_attackForce)
             :Unit(health, aForce), scores(0)
     {}
-    void attack (Dragon &drago)
+    void attack (Dragon &dragon)
     {
-        std::string q = drago.generateQuestion();
+        std::string q = dragon.generateQuestion();
         std::cout << "question: " << q;
         int answer;
         std::cin >> answer;
-        if (drago.checkAnswer(answer))
+        if (dragon.checkAnswer(answer))
         {
-            drago.getDamage(attackForce);
+            dragon.getDamage(attackForce);
             std::cout << "You hit dragon!" << std::endl;
         }
         else
         {
-            getDamage(drago.attackForce);
+            getDamage(dragon.attackForce);
             std::cout << "Dragon hits you!" << std::endl;
         }
     }
