@@ -13,7 +13,7 @@ public:
 
     AdditionDragon();
 
-    std::string generateQuestion();
+    string generateQuestion();
 };
 
 class SubtractionDragon : public Enemy {
@@ -26,7 +26,7 @@ public:
 
     SubtractionDragon();
 
-    std::string generateQuestion();
+    string generateQuestion();
 };
 
 class MultiplicationDragon : public Enemy {
@@ -39,7 +39,7 @@ public:
 
     MultiplicationDragon();
 
-    std::string generateQuestion();
+    string generateQuestion();
 };
 
 #endif

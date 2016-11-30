@@ -20,3 +20,9 @@ int Enemy::getKillPoints() const {
 bool Enemy::checkAnswer(int answer) const {
     return answer == answer_;
 }
+
+void Enemy::refresh() {
+    name_ = ::default_name;
+
+
+}

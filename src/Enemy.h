@@ -13,11 +13,14 @@ protected:
 
 
 public:
+
     Enemy(string name,
           int health,
           int attackForce,
           int attackTime,
           int killPoints);
+
+    void refresh();
 
     int getKillPoints() const;
 
@@ -27,4 +30,4 @@ public:
 };
 
 
-#endif // DRAGON_H_INCLUDED
+#endif

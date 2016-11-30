@@ -16,7 +16,7 @@ AdditionDragon::AdditionDragon()
                 AdditionDragon::default_attackTime,
                 AdditionDragon::default_killPoints) {}
 
-std::string AdditionDragon::generateQuestion() {
+string AdditionDragon::generateQuestion() {
     return std::__cxx11::string();
 }
 
@@ -36,7 +36,7 @@ SubtractionDragon::SubtractionDragon()
                 SubtractionDragon::default_attackTime,
                 SubtractionDragon::default_killPoints) {}
 
-std::string SubtractionDragon::generateQuestion() {
+string SubtractionDragon::generateQuestion() {
     return std::__cxx11::string();
 }
 
@@ -56,6 +56,6 @@ MultiplicationDragon::MultiplicationDragon()
                 MultiplicationDragon::default_attackTime,
                 MultiplicationDragon::default_killPoints) {}
 
-std::string MultiplicationDragon::generateQuestion() {
+string MultiplicationDragon::generateQuestion() {
     return std::__cxx11::string();
 }

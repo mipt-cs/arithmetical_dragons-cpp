@@ -18,6 +18,7 @@ public:
 
     virtual void refresh() = 0;
 
+    //По типу атакующего и его цели высчитывается значение и выполняется урон.
     void attack(Unit *target) const;
 
     bool isAlive() const;
