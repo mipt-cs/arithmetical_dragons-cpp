@@ -20,8 +20,8 @@ list<Dragon*> generateDragonList()
 {
     list<Dragon*> competitors;
     competitors.push_back(new GreenDragon());
-    competitors.push_back(new RedDragon());
-    competitors.push_back(new BlackDragon());
+    //competitors.push_back(new RedDragon());
+    //competitors.push_back(new BlackDragon());
 
     return competitors;
 }
@@ -31,14 +31,13 @@ bool playGame(Hero &hero, list<Dragon*> &dragons)
 {
     bool gameOver = false;
 
-    for (list<Dragon*>::iterator dragon = dragons.begin();
-            dragon != dragons.end(); dragon++)
+    for (auto & dragon: dragons)
     {
-        cout << "You have met a new " << (*dragon)->color() << " dragon. Fight!" << endl;
+        cout << "You have met a new " << dragon->color() << " dragon. Fight!" << endl;
 
-        while ((*dragon)->isAlive() && hero.isAlive())
+        while (dragon->isAlive() && hero.isAlive())
         {
-            hero.attack(**dragon);
+            hero.attack(*dragon);
         }
         if (!hero.isAlive())
         {
@@ -55,6 +54,12 @@ bool playGame(Hero &hero, list<Dragon*> &dragons)
 }
 
 
+void clearDragonList(list<Dragon*> dragons)
+{
+    for(auto &dragon: dragons)
+        delete dragon;
+}
+
 int main()
 {
     Hero hero;
@@ -69,8 +74,6 @@ int main()
     {
         cout << "You win! Your score is: " << hero.getScores() << endl;
     }
-    for (list<Dragon*>::iterator dragon = dragons.begin();
-            dragon != dragons.end(); dragon++)
-        delete *dragon;
+    clearDragonList(dragons);
     return 0;
 }
